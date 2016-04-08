@@ -120,8 +120,8 @@ public class NuboFaceJavaHandler extends TextWebSocketHandler {
 		});
 	    
 	    face = new NuboFaceDetector.Builder(user.getMediaPipeline()).build();
-	    face.activateServerEvents(1, 3000);
-	    addFaceListener();
+	    //face.activateServerEvents(1, 3000);
+	    //addFaceListener();
 	    
 	    webRtcEndpoint.connect(face);
 	    face.connect(webRtcEndpoint);
@@ -152,7 +152,7 @@ public class NuboFaceJavaHandler extends TextWebSocketHandler {
     }
 
 
-    private void addFaceListener()
+   /* private void addFaceListener()
     {
     	face.addOnFaceListener(new EventListener<OnFaceEvent>() {
 	    	@Override
@@ -161,7 +161,7 @@ public class NuboFaceJavaHandler extends TextWebSocketHandler {
 		    System.out.println("----------------Face Detected--------------------------");
     		}	    	
 	    });	
-    }
+    }*/
 
     private void notEnoughResources(WebSocketSession session) {
 	// 1. Send notEnoughResources message to client
